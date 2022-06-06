@@ -1,0 +1,125 @@
+.App {
+	text-align: center;
+	background-color: #282c34;
+	/* background-color: rgb(36, 24, 18); */
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: calc(10px + 2vmin);
+	color: white;
+}
+
+h2.title {
+	margin-top: 0;
+}
+
+.progress-bar-container {
+	position: relative;
+	height: 40px;
+	width: 350px;
+	border: 1px solid #fff;
+	margin: 20px auto 0 auto;
+}
+
+.progress-bar {
+	position: absolute;
+	background-color: #f8b700;
+	/* background-image: -webkit-linear-gradient(
+		top,
+		#efd100,
+		#e2a233 19%,
+		#f0c328 30%,
+		#fff1a3 43%,
+		#ffe13e 50%,
+		#fff 51%,
+		#fff
+	); */
+	height: 100%;
+}
+.progress-bar.start {
+	animation: progress-bar-loading 3.5s linear;
+}
+.progress-bar.finished {
+	width: 100%;
+}
+
+@keyframes progress-bar-loading {
+	0% {
+		width: 0;
+	}
+	100% {
+		width: 100%;
+	}
+}
+
+.skill-section {
+  display: flex;
+}
+
+.skill-button {
+	position: relative;
+	border: none;
+	padding: 0;
+	margin: 0;
+	width: 64px;
+	height: 64px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  margin-right: 5px;
+}
+/* .skill-button:active {
+	border: 1px solid #f8b700;
+	background-color: #f8b700;
+} */
+.skill-button:active::after, .skill-button.active::after  {
+	position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #070b0b;
+  opacity: 50%;
+}
+
+/* .App-logo {
+  height: 40vmin;
+  pointer-events: none;
+} */
+
+/* @media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+} */
+
+/* .App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+} */
+
+/* .App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+button {
+  font-size: calc(10px + 2vmin);
+} */
