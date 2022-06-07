@@ -1,12 +1,14 @@
-import { useEffect, useState } from 'react';
-import logo from './logo.svg';
-import skill1 from './assets/技能1.png';
-import skill2 from './assets/技能2.png';
-import skill3 from './assets/技能3.png';
-import skill4 from './assets/技能4.png';
-import skill5 from './assets/技能5.png';
-import skill6 from './assets/技能6.png';
+import { ImgHTMLAttributes, KeyboardEvent, useEffect, useState } from 'react';
+// import logo from './logo.svg';
+import imgUrl from './assets/技能1.png';
+// import skill2 from './assets/技能2.png';
+// import skill3 from './assets/技能3.png';
+// import skill4 from './assets/技能4.png';
+// import skill5 from './assets/技能5.png';
+// import skill6 from './assets/技能6.png';
 import './App.css';
+
+// const imgUrl = new URL('./assets/技能1.png', import.meta.url).href
 
 function App() {
 	const [count, setCount] = useState<number>(0);
@@ -42,12 +44,12 @@ function App() {
 					break;
 			}
 		});
-
 		document.addEventListener('keyup', (e) => {
 			if (e.key === '1') {
 			}
 			setActive(false);
 		});
+		// (document.getElementById('skill1') as HTMLImageElement).src = imgUrl;
 
 		return () => {
 			document.removeEventListener('keydown', (e) => {});
@@ -55,7 +57,7 @@ function App() {
 		};
 	}, []);
 
-	const handleSkillRelease = (event, params: number): void => {
+	const handleSkillRelease = (event: KeyboardEvent, params: number): void => {
 		// console.log(event);
 		// switch (params) {
 		// 	case 1:
@@ -76,9 +78,9 @@ function App() {
 						}`}
 						onKeyDown={(event) => handleSkillRelease(event, 1)}
 					>
-						<img src={skill1} alt='技能1' />
+						<img src={imgUrl} alt='技能1' id='skill1' />
 					</button>
-					<button
+					{/* <button
 						className={`skill-button ${
 							currentKey === '2' && active ? 'active' : null
 						}`}
@@ -112,7 +114,7 @@ function App() {
 						}`}
 					>
 						<img src={skill6} alt='技能6' />
-					</button>
+					</button> */}
 				</section>
 				<section>
 					<div className='timer'>
